@@ -1,1 +1,29 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #e9d21f;
+  --color-primary-hover: #d4be12;
+  --color-primary-shadow: #b8a510;
+
+  --color-secondary: #B0BD72;
+  --color-secondary-hover: #0d4539;
+
+  --color-tertiary: #cc4285;
+  --color-tertiary-hover: #b83674;
+}
+
+/*
+  <iframe> does not support object-fit; mimic object-cover for a 16:9 embed.
+  The video layer parent uses container-type:size so 100cqw / 100cqh match the
+  header + hero block — not the viewport — so the video always fills top/bottom.
+*/
+.hero-video {
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 0;
+  transform: translate(-50%, -50%);
+  width: max(100cqw, calc(100cqh * 16 / 9));
+  height: max(100cqh, calc(100cqw * 9 / 16));
+}
