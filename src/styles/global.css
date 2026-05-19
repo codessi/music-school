@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #e9d21f;
+  --color-primary: #95BF46;
   --color-primary-hover: #d4be12;
   --color-primary-shadow: #b8a510;
 
@@ -26,4 +26,17 @@
   transform: translate(-50%, -50%);
   width: max(100cqw, calc(100cqh * 16 / 9));
   height: max(100cqh, calc(100cqw * 9 / 16));
+}
+
+/* PNG logo tinted with theme primary (mask + background) */
+.logo-primary {
+  background-color: var(--color-primary);
+  mask-image: url("/logo-evergrow.png");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: left center;
+  -webkit-mask-image: url("/logo-evergrow.png");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: left center;
 }
