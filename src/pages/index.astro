@@ -122,6 +122,21 @@ const teachItems = [
 ---
 
 <Layout>
+  <link
+    slot="head"
+    rel="preload"
+    href="/logo-evergrow.webp"
+    as="image"
+    type="image/webp"
+  />
+  <link
+    slot="head"
+    rel="preload"
+    href="/studio-room.webp"
+    as="image"
+    type="image/webp"
+    fetchpriority="high"
+  />
   <main class="relative bg-slate-950">
     <!-- Hero region: video + gradient only as tall as nav + hero content -->
     <div class="relative isolate">
@@ -273,15 +288,19 @@ const teachItems = [
         </div>
         <div class="order-1 lg:order-2">
           <figure class="overflow-hidden rounded-3xl shadow-xl shadow-black/10">
-            <img
-              src="/studio-room.jpeg"
-              alt="Evergrow Music School teaching studio with piano and guitars"
-              class="aspect-4/3 h-auto w-full object-cover"
-              width="960"
-              height="720"
-              loading="lazy"
-              decoding="async"
-            />
+            <picture>
+              <source srcset="/studio-room.webp" type="image/webp" />
+              <img
+                src="/studio-room-1280.jpeg"
+                alt="Evergrow Music School teaching studio with piano and guitars"
+                class="aspect-4/3 h-auto w-full object-cover"
+                width="1280"
+                height="960"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </picture>
           </figure>
         </div>
       </div>
