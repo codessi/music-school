@@ -2,10 +2,12 @@
 
 @theme {
   --color-primary: #95BF46;
-  --color-primary-hover: #d4be12;
-  --color-primary-shadow: #b8a510;
+  --color-primary-hover: #7fa53a;
+  --color-primary-shadow: #6a8a2f;
 
-  --color-secondary: #B0BD72;
+  /* --color-secondary: #B0BD72;
+   */
+  --color-secondary: #071F20;
   --color-secondary-hover: #0d4539;
 
   --color-tertiary: #cc4285;
@@ -39,4 +41,25 @@
   -webkit-mask-size: contain;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: left center;
+}
+
+.what-we-teach-section {
+  background:
+    radial-gradient(
+      ellipse 90% 55% at 15% 0%,
+      rgba(149, 191, 70, 0.28),
+      transparent 58%
+    ),
+    radial-gradient(
+      ellipse 75% 50% at 100% 100%,
+      rgba(149, 191, 70, 0.14),
+      transparent 52%
+    ),
+    linear-gradient(
+      155deg,
+      #071f20 0%,
+      #0c2e2a 42%,
+      #071f20 72%,
+      #052424 100%
+    );
 }

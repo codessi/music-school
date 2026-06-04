@@ -93,30 +93,26 @@ const teachItems = [
   {
     title: "Piano",
     body: "More than just learning dots on the sheet, you will learn what it means to play the song you chose. What key is it? Is it a happy or sad song? What point is the composer trying to make?",
-    image:
-      "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&w=800&q=80",
+    image: "/piano.webp",
     alt: "Person playing piano with colorful stage lighting",
   },
   {
     title: "Guitar",
     body: "It doesn't have to be hard. Good teachers have a way to fit your fingers on guitar by showing the way that your uncle never thought of.",
-    image:
-      "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=800&q=80",
-    alt: "Hands playing an acoustic guitar",
+    image: "/guitar.jpg",
+    alt: "Hands playing an acoustic guitar during a lesson",
   },
   {
     title: "Ukulele",
     body: "Don't let the four strings of a ukulele fool you—you can play almost any song and make it sound great! For faster and complex strumming, ukulele is the choice!",
-    image:
-      "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=800&q=80",
-    alt: "Group playing ukuleles together",
+    image: "/ukulele.jpg",
+    alt: "Students learning ukulele",
   },
   {
     title: "Music theory",
     body: "Learn it once and use it on every song. There is a clear pattern and the good teacher will show you the theory behind only the music you are working on.",
-    image:
-      "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=800&q=80",
-    alt: "Violin, guitar, and sheet music arranged on a table",
+    image: "/music%20theory.jpg",
+    alt: "Music theory lesson with instruments and sheet music",
   },
 ] as const;
 
@@ -129,9 +125,8 @@ const lessonBundles = [
       "Kids Under 10",
       "Adult who want to learn a song or more",
     ],
-    image:
-      "https://images.unsplash.com/photo-1529156069898?auto=format&fit=crop&w=600&h=450&q=80",
-    alt: "Young musicians with a guitar outdoors",
+    image: "/Junior%20Player.webp",
+    alt: "Junior Player lesson bundle",
     bookUrl: "https://buy.stripe.com/3cIeVf1uE7iuf35cZib7y00"
   },
   {
@@ -139,9 +134,8 @@ const lessonBundles = [
     price: "$255 FOR 4 LESSONS",
     duration: "45 min",
     recommendations: ["Kids over 10 year old", "Casual Learner"],
-    image:
-      "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=600&h=450&q=80",
-    alt: "Person playing acoustic guitar",
+    image: "/Casual%20Strummer.webp",
+    alt: "Casual Strummer lesson bundle",
     bookUrl: "https://buy.stripe.com/3cIeVf3CM5amcUX0cwb7y01",
   },
   {
@@ -152,9 +146,8 @@ const lessonBundles = [
       "Adults who want to learn fast",
       "Teenagers",
     ],
-    image:
-      "https://images.unsplash.com/photo-1514320291840-655d14f0126c?auto=format&fit=crop&w=600&h=450&q=80",
-    alt: "Group playing music together outdoors",
+    image: "/Accelerated%20Jammer.webp",
+    alt: "Accelerated Jammer lesson bundle",
     bookUrl: "https://buy.stripe.com/28EcN7flu46icUX6AUb7y04"
   },
 ] as const;
@@ -346,16 +339,16 @@ const lessonBundles = [
     </section>
 
     <section
-      class="relative z-30 bg-[#566D55] rounded-t-[60px] -mt-[60px] text-white"
+      class=" relative bg-white"
       aria-labelledby="what-we-teach-heading"
-    >
-      <div class="mx-auto max-w-7xl px-6 py-16 md:px-10 md:py-24 lg:py-28">
-        <h2
+    >        <h2
           id="what-we-teach-heading"
-          class="text-center text-4xl font-bold uppercase tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
+          class="text-center text-4xl font-bold uppercase tracking-tight text-black sm:text-5xl md:text-6xl lg:text-7xl"
         >
           What we teach !
         </h2>
+      <div class="mx-auto max-w-7xl what-we-teach-section border-4 border-red-500  rounded-[50px] text-white px-6 py-16 md:px-10 md:py-24 lg:py-28">
+
 
         <div
           class="mt-14 grid gap-14 md:mt-20 md:gap-16 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-20"
