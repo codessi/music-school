@@ -116,7 +116,7 @@ const teachItems = [
   },
 ] as const;
 
-const lessonBundles = [
+const pricingPlans = [
   {
     name: "Junior Player",
     price: "$185 FOR 4 LESSONS",
@@ -127,15 +127,15 @@ const lessonBundles = [
     ],
     image: "/Junior%20Player.webp",
     alt: "Junior Player lesson bundle",
-    bookUrl: "https://buy.stripe.com/3cIeVf1uE7iuf35cZib7y00"
+    bookUrl: "https://buy.stripe.com/3cIeVf1uE7iuf35cZib7y00",
   },
   {
     name: "Casual Strummer",
     price: "$255 FOR 4 LESSONS",
     duration: "45 min",
     recommendations: ["Kids over 10 year old", "Casual Learner"],
-    image: "/Casual%20Strummer.webp",
-    alt: "Casual Strummer lesson bundle",
+    image: "/casual%20strummer.jpg",
+    alt: "Hands playing piano during a casual music lesson",
     bookUrl: "https://buy.stripe.com/3cIeVf3CM5amcUX0cwb7y01",
   },
   {
@@ -148,7 +148,34 @@ const lessonBundles = [
     ],
     image: "/Accelerated%20Jammer.webp",
     alt: "Accelerated Jammer lesson bundle",
-    bookUrl: "https://buy.stripe.com/28EcN7flu46icUX6AUb7y04"
+    bookUrl: "https://buy.stripe.com/28EcN7flu46icUX6AUb7y04",
+  },
+  {
+    sectionLabel: "Groups",
+    sectionAccent: "text-primary",
+    name: "Group of Three",
+    price: "$28 per student per lesson",
+    duration: "1 Hour",
+    recommendations: [
+      "Family & Friends Lessons",
+      "Low pressure and budget",
+    ],
+    image: "/group.jpg",
+    alt: "Group guitar lesson with children outdoors",
+  },
+  {
+    sectionLabel: "À la carte",
+    sectionAccent: "text-secondary",
+    name: "One Lesson",
+    price: "$50",
+    duration: "30 min",
+    recommendations: [
+      "Trial lesson",
+      "Irregular Schedule",
+      "Project based",
+    ],
+    image: "/guitar.jpg",
+    alt: "One-on-one guitar lesson",
   },
 ] as const;
 ---
@@ -339,33 +366,35 @@ const lessonBundles = [
     </section>
 
     <section
-      class=" relative bg-white"
+      class="  bg-white"
       aria-labelledby="what-we-teach-heading"
     >        <h2
           id="what-we-teach-heading"
-          class="text-center text-4xl font-bold uppercase tracking-tight text-black sm:text-5xl md:text-6xl lg:text-7xl"
+          class="text-center text-4xl font-bold uppercase tracking-tight text-secondary sm:text-5xl md:text-6xl lg:text-7xl mb-10"
         >
           What we teach !
         </h2>
-      <div class="mx-auto max-w-7xl what-we-teach-section border-4 border-red-500  rounded-[50px] text-white px-6 py-16 md:px-10 md:py-24 lg:py-28">
+      <div class="mx-auto max-w-7xl what-we-teach-section  rounded-[50px] text-white px-[60px] py-6 ">
 
 
         <div
-          class="mt-14 grid gap-14 md:mt-20 md:gap-16 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-20"
+          class="mt-14 grid gap-14 px-6  md:mt-20 md:gap-16 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-20"
         >
           {
             teachItems.map((item) => (
               <article class="flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-8 lg:gap-10">
-                <div class="mx-auto w-full shrink-0 sm:mx-0 sm:w-44 md:w-52 lg:w-56">
-                  <img
-                    src={item.image}
-                    alt={item.alt}
-                    width={400}
-                    height={400}
-                    loading="lazy"
-                    decoding="async"
-                    class="aspect-square w-full rounded-2xl object-cover shadow-md shadow-black/10"
-                  />
+                <div class="mx-auto w-full shrink-0 overflow-hidden rounded-2xl shadow-md shadow-black/10 sm:mx-0 sm:w-44 md:w-52 lg:w-56">
+                  <div class="relative aspect-square">
+                    <img
+                      src={item.image}
+                      alt={item.alt}
+                      width={400}
+                      height={400}
+                      loading="lazy"
+                      decoding="async"
+                      class="absolute inset-0 h-full w-full object-cover object-center"
+                    />
+                  </div>
                 </div>
                 <div class="min-w-0 flex-1 text-center sm:text-left">
                   <h3 class="text-xl font-bold uppercase tracking-wide text-white md:text-2xl">
@@ -380,7 +409,7 @@ const lessonBundles = [
           }
         </div>
 
-        <div class="mt-16 flex justify-center md:mt-20">
+        <div class="mt-16 flex justify-center mb-10 md:mt-20">
           <a
             href="#lead-form"
             class="inline-flex min-w-56 items-center justify-center rounded-full border-2 border-white bg-transparent px-12 py-4 text-sm font-bold uppercase tracking-wider text-white underline decoration-2 underline-offset-[0.2em] transition hover:bg-white/15 md:text-base"
@@ -392,7 +421,7 @@ const lessonBundles = [
     </section>
 
     <section
-      class="relative z-30 bg-white rounded-t-[60px] -mt-[60px] text-slate-900"
+      class="relative z-30 bg-white text-slate-900"
       aria-labelledby="lesson-deals-heading"
     >
       <div class="mx-auto max-w-7xl px-6 py-16 md:px-10 md:py-24 lg:py-28">
@@ -409,60 +438,72 @@ const lessonBundles = [
           class="mt-12 grid gap-8 md:mt-16 md:grid-cols-2 md:gap-10 lg:grid-cols-3"
         >
           {
-            lessonBundles.map((bundle) => (
-              <article class="flex flex-col overflow-hidden rounded-2xl shadow-lg shadow-black/10 ring-1 ring-slate-200/80">
-                <div class="relative aspect-4/3">
-                  <img
-                    src={bundle.image}
-                    alt={bundle.alt}
-                    width={600}
-                    height={450}
-                    loading="lazy"
-                    decoding="async"
-                    class="h-full w-full object-cover"
-                  />
-                  <div
-                    class="absolute inset-0 bg-linear-to-t from-slate-950/80 via-slate-950/25 to-transparent"
-                    aria-hidden="true"
-                  />
-                  <div class="absolute bottom-0 left-0 p-5">
-                    <h3 class="text-lg font-bold uppercase leading-tight tracking-wide text-white md:text-xl">
-                      {bundle.name}
-                    </h3>
-                    <p class="mt-1 text-sm font-semibold uppercase tracking-wide text-white/95">
-                      {bundle.price}
-                    </p>
-                  </div>
-                </div>
-
-                <div class="flex flex-1 flex-col bg-secondary/25 px-5 py-6 md:px-6 md:py-7">
-                  <ul class="list-disc space-y-3 pl-5 text-sm text-slate-800 md:text-base">
-                    <li>{bundle.duration}</li>
-                    <li>
-                      Recommend for
-                      <ul class="mt-2 list-disc space-y-1 pl-5">
-                        {bundle.recommendations.map((item) => (
-                          <li>{item}</li>
-                        ))}
-                      </ul>
-                    </li>
-                  </ul>
-                  <a
-                    href={"bookUrl" in bundle ? bundle.bookUrl : "#lead-form"}
-                    target={"bookUrl" in bundle ? "_blank" : undefined}
-                    rel={"bookUrl" in bundle ? "noopener noreferrer" : undefined}
-                    class="mt-8 inline-flex w-full items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-bold uppercase tracking-wider text-slate-900 shadow-md shadow-primary-shadow/25 transition hover:bg-primary-hover"
+            pricingPlans.map((plan) => (
+              <div class="flex flex-col">
+                {"sectionLabel" in plan && (
+                  <h3
+                    class:list={[
+                      "mb-6 text-center text-3xl font-bold uppercase tracking-tight md:text-4xl",
+                      plan.sectionAccent,
+                    ]}
                   >
-                    Book now
-                  </a>
-                </div>
-              </article>
+                    {plan.sectionLabel}
+                  </h3>
+                )}
+                <article class="flex flex-1 flex-col overflow-hidden rounded-2xl shadow-lg shadow-black/10 ring-1 ring-slate-200/80">
+                  <div class="relative aspect-4/3 overflow-hidden">
+                    <img
+                      src={plan.image}
+                      alt={plan.alt}
+                      width={600}
+                      height={450}
+                      loading="lazy"
+                      decoding="async"
+                      class="absolute inset-0 h-full w-full object-cover object-center"
+                    />
+                    <div
+                      class="absolute inset-0 bg-linear-to-t from-slate-950/80 via-slate-950/25 to-transparent"
+                      aria-hidden="true"
+                    />
+                    <div class="absolute bottom-0 left-0 p-5">
+                      <h4 class="text-lg font-bold uppercase leading-tight tracking-wide text-white md:text-xl">
+                        {plan.name}
+                      </h4>
+                      <p class="mt-1 text-sm font-semibold uppercase tracking-wide text-white/95">
+                        {plan.price}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-1 flex-col bg-white px-5 py-6 md:px-6 md:py-7">
+                    <ul class="list-disc space-y-3 pl-5 text-sm text-slate-800 md:text-base">
+                      <li>{plan.duration}</li>
+                      <li>
+                        Recommend for
+                        <ul class="mt-2 list-disc space-y-1 pl-5">
+                          {plan.recommendations.map((item) => (
+                            <li>{item}</li>
+                          ))}
+                        </ul>
+                      </li>
+                    </ul>
+                    <a
+                      href={"bookUrl" in plan ? plan.bookUrl : "#lead-form"}
+                      target={"bookUrl" in plan ? "_blank" : undefined}
+                      rel={"bookUrl" in plan ? "noopener noreferrer" : undefined}
+                      class="mt-8 inline-flex w-full items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-bold uppercase tracking-wider text-slate-900 shadow-md shadow-primary-shadow/25 transition hover:bg-primary-hover"
+                    >
+                      Book now
+                    </a>
+                  </div>
+                </article>
+              </div>
             ))
           }
         </div>
 
         <p class="mt-10 text-center text-sm text-slate-600 md:mt-12">
-          *** Add Home visit for $25 per lesson
+          *** Add Home visit for $25 per lesson · Groups home visit $20 fee
         </p>
       </div>
     </section>
