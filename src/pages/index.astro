@@ -226,10 +226,11 @@ const pricingPlans = [
             </a>
             <div class="hidden items-center gap-8 text-sm md:flex">
               <a href="#" class="transition hover:text-primary">Home</a>
-              <a href="#" class="transition hover:text-primary">About</a>
-              <a href="#" class="transition hover:text-primary">Instruments</a
+              <a href="#about" class="transition hover:text-primary">About</a>
+              <a href="#what-we-teach" class="transition hover:text-primary"
+                >Instruments</a
               >
-              <a href="#" class="transition hover:text-primary">Locations</a>
+              <a href="#pricing" class="transition hover:text-primary">Pricing</a>
               <a href="#" class="transition hover:text-primary">Contact</a>
             </div>
             <a
@@ -311,7 +312,8 @@ const pricingPlans = [
 
     <!-- About / lessons overview -->
     <section
-      class="relative z-30 bg-white pb-30 rounded-t-[60px] -mt-[60px] text-slate-900"
+      id="about"
+      class="relative z-30 bg-white pb-30 rounded-t-[60px] -mt-[60px] text-slate-900 scroll-mt-6"
       aria-labelledby="about-lessons-heading"
     >
       <div
@@ -366,7 +368,8 @@ const pricingPlans = [
     </section>
 
     <section
-      class="  bg-white"
+      id="what-we-teach"
+      class="scroll-mt-6 bg-white"
       aria-labelledby="what-we-teach-heading"
     >        <h2
           id="what-we-teach-heading"
@@ -421,7 +424,8 @@ const pricingPlans = [
     </section>
 
     <section
-      class="relative z-30 bg-white text-slate-900"
+      id="pricing"
+      class="relative z-30 scroll-mt-6 bg-white text-slate-900"
       aria-labelledby="lesson-deals-heading"
     >
       <div class="mx-auto max-w-7xl px-6 py-16 md:px-10 md:py-24 lg:py-28">
