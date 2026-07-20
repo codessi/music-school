@@ -233,14 +233,55 @@ const pricingPlans = [
               <a href="#pricing" class="transition hover:text-primary">Pricing</a>
               <a href="#contact" class="transition hover:text-primary">Contact</a>
             </div>
-            <a
-              href="#lead-form"
+            <button
+              type="button"
+              id="student-login-btn"
+              aria-haspopup="dialog"
+              aria-controls="student-login-modal"
               class="rounded-full bg-primary px-5 py-2 text-xs font-semibold uppercase tracking-wider text-slate-900 shadow-lg shadow-primary-shadow/35 transition hover:bg-primary-hover"
             >
               Student Login
-            </a>
+            </button>
           </nav>
         </header>
+
+        <div
+          id="student-login-modal"
+          class="fixed inset-0 z-[100] hidden items-center justify-center bg-slate-950/70 p-4 backdrop-blur-sm"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="student-login-title"
+        >
+          <div
+            class="relative w-full max-w-md rounded-3xl bg-white p-6 text-slate-900 shadow-2xl shadow-black/40 md:p-8"
+          >
+            <div class="mb-4 flex items-center justify-between gap-4">
+              <h2
+                id="student-login-title"
+                class="text-lg font-bold tracking-tight"
+              >
+                Student Login
+              </h2>
+              <button
+                type="button"
+                id="student-login-close"
+                class="rounded-full px-3 py-1 text-sm font-semibold text-slate-500 transition hover:bg-slate-100 hover:text-slate-900"
+                aria-label="Close student login"
+              >
+                Close
+              </button>
+            </div>
+            <div
+              id="student-login-widget"
+              class="min-h-[200px] rounded-xl border border-slate-200 bg-slate-50/70 p-3"
+            >
+              <script
+                is:inline
+                src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9yVjFKQyIsIldlYnNpdGVJRCI6Indic19kMW5KViIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pGUjVZSk0ifQ=="
+              ></script>
+            </div>
+          </div>
+        </div>
 
         <section
           class="mx-auto flex w-full max-w-7xl flex-col px-6 pb-12 pt-6 md:px-10 lg:pb-20 lg:pt-10"
@@ -540,6 +581,20 @@ const pricingPlans = [
             </a>
             <p class="mt-8 text-sm leading-relaxed text-slate-600">
               Los Angeles, CA 90004
+              <span class="mx-2 text-slate-300" aria-hidden="true">|</span>
+              <a
+                href="mailto:info@evergrowmusic.com"
+                class="text-secondary transition hover:text-primary"
+              >
+              info@evergrowmusic.com
+              </a>
+              <span class="mx-2 text-slate-300" aria-hidden="true">|</span>
+              <a
+                href="tel:+12139499041"
+                class="text-secondary transition hover:text-primary"
+              >
+                213-949-9041
+              </a>
             </p>
             <p class="mt-3 text-sm text-slate-600">
               © {new Date().getFullYear()} Evergrow Music School. All Rights
@@ -640,4 +695,38 @@ const pricingPlans = [
       </div>
     </footer>
   </main>
+
+  <script is:inline>
+    (() => {
+      const openBtn = document.getElementById("student-login-btn");
+      const modal = document.getElementById("student-login-modal");
+      const closeBtn = document.getElementById("student-login-close");
+      if (!openBtn || !modal || !closeBtn) return;
+
+      const open = () => {
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+        document.body.style.overflow = "hidden";
+        closeBtn.focus();
+      };
+
+      const close = () => {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+        document.body.style.overflow = "";
+        openBtn.focus();
+      };
+
+      openBtn.addEventListener("click", open);
+      closeBtn.addEventListener("click", close);
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) close();
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !modal.classList.contains("hidden")) {
+          close();
+        }
+      });
+    })();
+  </script>
 </Layout>
