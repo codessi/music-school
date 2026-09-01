@@ -1,0 +1,164 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Book from Calendar | Evergrow Music School"
+  description="Book a music lesson at Evergrow Music School using our online calendar."
+>
+  <main class="min-h-screen bg-white text-slate-900">
+    <header class="border-b border-slate-200 bg-secondary text-white">
+      <nav
+        class="mx-auto flex w-full max-w-7xl items-center justify-between gap-3 px-6 py-4 md:px-10"
+      >
+        <a href="/" class="flex shrink-0 items-center gap-3">
+          <img
+            src="/logo-evergrow.webp"
+            alt="Evergrow Music School"
+            width="180"
+            height="72"
+            class="h-10 w-auto md:h-12"
+            loading="eager"
+            decoding="async"
+          />
+        </a>
+
+        <div class="hidden items-center gap-8 text-sm md:flex">
+          <a href="/" class="transition hover:text-primary">Home</a>
+          <a href="/#about" class="transition hover:text-primary">About</a>
+          <a href="/#what-we-teach" class="transition hover:text-primary"
+            >Instruments</a
+          >
+          <a href="/#pricing" class="transition hover:text-primary">Pricing</a>
+          <a href="/#testimonials" class="transition hover:text-primary"
+            >Testimonials</a
+          >
+          <a href="/book" class="font-semibold text-primary">Book from calendar</a>
+          <a href="/#contact" class="transition hover:text-primary">Contact</a>
+        </div>
+
+        <button
+          type="button"
+          id="mobile-menu-btn"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/25 text-white transition hover:border-primary hover:text-primary md:hidden"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Open menu"
+        >
+          <svg
+            id="mobile-menu-icon-open"
+            class="h-5 w-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"></path>
+          </svg>
+          <svg
+            id="mobile-menu-icon-close"
+            class="hidden h-5 w-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"></path>
+          </svg>
+        </button>
+      </nav>
+
+      <div
+        id="mobile-menu"
+        class="hidden border-t border-white/10 bg-secondary px-6 py-4 md:hidden"
+      >
+        <div class="mx-auto flex max-w-7xl flex-col gap-1 text-sm">
+          <a
+            href="/"
+            class="mobile-nav-link rounded-xl px-3 py-3 transition hover:bg-white/10 hover:text-primary"
+            >Home</a
+          >
+          <a
+            href="/#about"
+            class="mobile-nav-link rounded-xl px-3 py-3 transition hover:bg-white/10 hover:text-primary"
+            >About</a
+          >
+          <a
+            href="/#what-we-teach"
+            class="mobile-nav-link rounded-xl px-3 py-3 transition hover:bg-white/10 hover:text-primary"
+            >Instruments</a
+          >
+          <a
+            href="/#pricing"
+            class="mobile-nav-link rounded-xl px-3 py-3 transition hover:bg-white/10 hover:text-primary"
+            >Pricing</a
+          >
+          <a
+            href="/#testimonials"
+            class="mobile-nav-link rounded-xl px-3 py-3 transition hover:bg-white/10 hover:text-primary"
+            >Testimonials</a
+          >
+          <a
+            href="/book"
+            class="mobile-nav-link rounded-xl px-3 py-3 font-semibold text-primary"
+            >Book from calendar</a
+          >
+          <a
+            href="/#contact"
+            class="mobile-nav-link rounded-xl px-3 py-3 transition hover:bg-white/10 hover:text-primary"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <section class="mx-auto max-w-5xl px-6 py-12 md:px-10 md:py-16 lg:py-20">
+      <h1
+        class="text-center text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-5xl"
+      >
+        Book from calendar
+      </h1>
+      <p class="mx-auto mt-4 max-w-2xl text-center text-base text-slate-600 md:text-lg">
+        Choose a time that works for you and book your lesson online.
+      </p>
+
+      <div
+        class="mt-10 min-h-[480px] overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 p-4 shadow-lg shadow-black/5 md:p-6"
+      >
+        <script
+          is:inline
+          src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9yVjFKQyIsIldlYnNpdGVJRCI6Indic19kMW5KViIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pjYnRsSmcifQ=="
+        ></script>
+
+      </div>
+    </section>
+  </main>
+
+  <script is:inline>
+    (() => {
+      const menuBtn = document.getElementById("mobile-menu-btn");
+      const menu = document.getElementById("mobile-menu");
+      const iconOpen = document.getElementById("mobile-menu-icon-open");
+      const iconClose = document.getElementById("mobile-menu-icon-close");
+      if (!menuBtn || !menu || !iconOpen || !iconClose) return;
+
+      const setMenuOpen = (isOpen) => {
+        menu.classList.toggle("hidden", !isOpen);
+        iconOpen.classList.toggle("hidden", isOpen);
+        iconClose.classList.toggle("hidden", !isOpen);
+        menuBtn.setAttribute("aria-expanded", String(isOpen));
+        menuBtn.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+      };
+
+      menuBtn.addEventListener("click", () => {
+        setMenuOpen(menu.classList.contains("hidden"));
+      });
+
+      menu.querySelectorAll(".mobile-nav-link").forEach((link) => {
+        link.addEventListener("click", () => setMenuOpen(false));
+      });
+    })();
+  </script>
+</Layout>
