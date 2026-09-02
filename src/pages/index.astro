@@ -184,6 +184,13 @@ const googleReviewsUrl = "https://www.google.com/maps/place/Evergrow+Music+Schoo
 const testimonials = [
   {
     quote:
+      "My now 2nd graders daughter had piano lessons with Johan during the summer and she loved it. Johan is a great music teacher. He's very engaging and encouraging, and makes learning fun and easy. My daughter not only grew in her piano skills during the summer, but she also fell more deeply in love with piano and music. We're both very thankful for Johan's teaching. Highly recommend!",
+    name: "Won Jung Yoo",
+    sourceLabel: "Read on Google",
+    sourceUrl: googleReviewsUrl,
+  },
+  {
+    quote:
       "We couldn’t be happier with Johan as our son’s music teacher! He is wonderful, patient, and truly understanding — always making sure lessons are tailored to what works best for my son. What really sets Johan apart is how flexible he is, and how much effort he puts into keeping things fresh and exciting. He’s constantly looking to improve and brings new ideas into every lesson, which keeps my son genuinely engaged and looking forward to each class. The fun atmosphere he creates makes all the difference. Highly recommend Johan to any parent looking for a dedicated and passionate music teacher!",
     name: "Stephania Gambaroff",
     avatar: "/avatar-stephania-gambaroff.png",
@@ -262,15 +269,12 @@ const testimonials = [
             </div>
 
             <div class="flex items-center gap-2 sm:gap-3">
-              <button
-                type="button"
-                id="student-login-btn"
-                aria-haspopup="dialog"
-                aria-controls="student-login-modal"
+              <a
+                href="/login"
                 class="rounded-full bg-primary px-3 py-2 text-[10px] font-semibold uppercase tracking-wider text-slate-900 shadow-lg shadow-primary-shadow/35 transition hover:bg-primary-hover sm:px-5 sm:text-xs"
               >
                 Student Login
-              </button>
+              </a>
               <button
                 type="button"
                 id="mobile-menu-btn"
@@ -349,44 +353,6 @@ const testimonials = [
             </div>
           </div>
         </header>
-
-        <div
-          id="student-login-modal"
-          class="fixed inset-0 z-[100] hidden items-center justify-center bg-slate-950/70 p-4 backdrop-blur-sm"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="student-login-title"
-        >
-          <div
-            class="relative w-full max-w-md rounded-3xl bg-white p-6 text-slate-900 shadow-2xl shadow-black/40 md:p-8"
-          >
-            <div class="mb-4 flex items-center justify-between gap-4">
-              <h2
-                id="student-login-title"
-                class="text-lg font-bold tracking-tight"
-              >
-                Student Login
-              </h2>
-              <button
-                type="button"
-                id="student-login-close"
-                class="rounded-full px-3 py-1 text-sm font-semibold text-slate-500 transition hover:bg-slate-100 hover:text-slate-900"
-                aria-label="Close student login"
-              >
-                Close
-              </button>
-            </div>
-            <div
-              id="student-login-widget"
-              class="min-h-[200px] rounded-xl border border-slate-200 bg-slate-50/70 p-3"
-            >
-              <script
-                is:inline
-                src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9yVjFKQyIsIldlYnNpdGVJRCI6Indic19kMW5KViIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pGUjVZSk0ifQ=="
-              ></script>
-            </div>
-          </div>
-        </div>
 
         <section
           class="mx-auto flex w-full max-w-7xl flex-col px-6 pb-12 pt-6 md:px-10 lg:pb-20 lg:pt-10"
@@ -927,36 +893,6 @@ const testimonials = [
 
   <script is:inline>
     (() => {
-      const openBtn = document.getElementById("student-login-btn");
-      const modal = document.getElementById("student-login-modal");
-      const closeBtn = document.getElementById("student-login-close");
-      if (openBtn && modal && closeBtn) {
-        const open = () => {
-          modal.classList.remove("hidden");
-          modal.classList.add("flex");
-          document.body.style.overflow = "hidden";
-          closeBtn.focus();
-        };
-
-        const close = () => {
-          modal.classList.add("hidden");
-          modal.classList.remove("flex");
-          document.body.style.overflow = "";
-          openBtn.focus();
-        };
-
-        openBtn.addEventListener("click", open);
-        closeBtn.addEventListener("click", close);
-        modal.addEventListener("click", (event) => {
-          if (event.target === modal) close();
-        });
-        document.addEventListener("keydown", (event) => {
-          if (event.key === "Escape" && !modal.classList.contains("hidden")) {
-            close();
-          }
-        });
-      }
-
       const menuBtn = document.getElementById("mobile-menu-btn");
       const menu = document.getElementById("mobile-menu");
       const iconOpen = document.getElementById("mobile-menu-icon-open");

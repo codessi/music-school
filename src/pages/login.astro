@@ -3,8 +3,8 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout
-  title="Book from Calendar | Evergrow Music School"
-  description="Book a music lesson at Evergrow Music School using our online calendar."
+  title="Student Login | Evergrow Music School"
+  description="Log in to your Evergrow Music School student portal to manage lessons and your account."
 >
   <main class="min-h-screen bg-white text-slate-900">
     <header class="border-b border-slate-200 bg-secondary text-white">
@@ -33,7 +33,9 @@ import Layout from "../layouts/Layout.astro";
           <a href="/#testimonials" class="transition hover:text-primary"
             >Testimonials</a
           >
-          <a href="/book" class="font-semibold text-primary">Book from calendar</a>
+          <a href="/book" class="transition hover:text-primary"
+            >Book from calendar</a
+          >
           <a href="/#contact" class="transition hover:text-primary">Contact</a>
         </div>
 
@@ -102,7 +104,7 @@ import Layout from "../layouts/Layout.astro";
           >
           <a
             href="/book"
-            class="mobile-nav-link rounded-xl px-3 py-3 font-semibold text-primary"
+            class="mobile-nav-link rounded-xl px-3 py-3 transition hover:bg-white/10 hover:text-primary"
             >Book from calendar</a
           >
           <a
@@ -114,27 +116,23 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </header>
 
-    <section class="mx-auto max-w-5xl px-6 py-12 md:px-10 md:py-16 lg:py-20">
+    <section class="mx-auto max-w-lg px-6 py-12 md:px-10 md:py-16 lg:py-20">
       <h1
         class="text-center text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-5xl"
       >
-        Book from calendar
+        Student Login
       </h1>
       <p class="mx-auto mt-4 max-w-2xl text-center text-base text-slate-600 md:text-lg">
-        Choose a time that works for you and book your lesson online.
-      </p>
-      <p class="mx-auto mt-4 max-w-2xl font-bold text-center text-base text-red-600 md:text-lg">
-       Note: Wednesday are dedicated to Pasadena Branch (TDCA) only.
+        Log in to manage your lessons, billing, and student account.
       </p>
 
       <div
-        class="mt-10 min-h-[480px] overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 p-4 shadow-lg shadow-black/5 md:p-6"
+        class="mt-10 min-h-[280px] overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 p-4 shadow-lg shadow-black/5 md:p-6"
       >
         <script
           is:inline
-          src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9yVjFKQyIsIldlYnNpdGVJRCI6Indic19kMW5KViIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pjYnRsSmcifQ=="
+          src="https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9yVjFKQyIsIldlYnNpdGVJRCI6Indic19kMW5KViIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pGUjVZSk0ifQ=="
         ></script>
-
       </div>
     </section>
   </main>
