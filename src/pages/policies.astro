@@ -1,0 +1,256 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Studio Policies & Tuition | Evergrow Music School"
+  description="Review Evergrow Music School studio guidelines for monthly tuition, attendance, make-up lessons, substitutions, and cancellation notice."
+>
+  <main class="min-h-screen bg-white text-slate-900">
+    <header class="border-b border-slate-200 bg-secondary text-white">
+      <nav
+        class="mx-auto flex w-full max-w-7xl items-center justify-between gap-3 px-6 py-4 md:px-10"
+      >
+        <a href="/" class="flex shrink-0 items-center gap-3">
+          <img
+            src="/logo-evergrow.webp"
+            alt="Evergrow Music School"
+            width="180"
+            height="72"
+            class="h-10 w-auto md:h-12"
+            loading="eager"
+            decoding="async"
+          />
+        </a>
+
+        <div class="hidden items-center gap-8 text-sm md:flex">
+          <a href="/" class="transition hover:text-primary">Home</a>
+          <a href="/#about" class="transition hover:text-primary">About</a>
+          <a href="/#what-we-teach" class="transition hover:text-primary"
+            >Instruments</a
+          >
+          <a href="/#pricing" class="font-semibold text-primary">Pricing</a>
+          <a href="/#testimonials" class="transition hover:text-primary"
+            >Testimonials</a
+          >
+          <a href="/book" class="transition hover:text-primary"
+            >Book from calendar</a
+          >
+          <a href="/#contact" class="transition hover:text-primary">Contact</a>
+        </div>
+
+        <button
+          type="button"
+          id="mobile-menu-btn"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/25 text-white transition hover:border-primary hover:text-primary md:hidden"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Open menu"
+        >
+          <svg
+            id="mobile-menu-icon-open"
+            class="h-5 w-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"></path>
+          </svg>
+          <svg
+            id="mobile-menu-icon-close"
+            class="hidden h-5 w-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"></path>
+          </svg>
+        </button>
+      </nav>
+
+      <div
+        id="mobile-menu"
+        class="hidden border-t border-white/10 bg-secondary px-6 py-4 md:hidden"
+      >
+        <div class="mx-auto flex max-w-7xl flex-col gap-1 text-sm">
+          <a
+            href="/"
+            class="mobile-nav-link rounded-xl px-3 py-3 transition hover:bg-white/10 hover:text-primary"
+            >Home</a
+          >
+          <a
+            href="/#about"
+            class="mobile-nav-link rounded-xl px-3 py-3 transition hover:bg-white/10 hover:text-primary"
+            >About</a
+          >
+          <a
+            href="/#what-we-teach"
+            class="mobile-nav-link rounded-xl px-3 py-3 transition hover:bg-white/10 hover:text-primary"
+            >Instruments</a
+          >
+          <a
+            href="/#pricing"
+            class="mobile-nav-link rounded-xl px-3 py-3 font-semibold text-primary"
+            >Pricing</a
+          >
+          <a
+            href="/#testimonials"
+            class="mobile-nav-link rounded-xl px-3 py-3 transition hover:bg-white/10 hover:text-primary"
+            >Testimonials</a
+          >
+          <a
+            href="/book"
+            class="mobile-nav-link rounded-xl px-3 py-3 transition hover:bg-white/10 hover:text-primary"
+            >Book from calendar</a
+          >
+          <a
+            href="/#contact"
+            class="mobile-nav-link rounded-xl px-3 py-3 transition hover:bg-white/10 hover:text-primary"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <article class="mx-auto max-w-3xl px-6 py-12 md:px-10 md:py-16 lg:py-20">
+      <h1
+        class="text-center text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-5xl"
+      >
+        Studio Policies & Tuition
+      </h1>
+      <p class="mt-6 text-base leading-relaxed text-slate-600 md:text-lg">
+        Thank you for choosing to learn and grow with us! Consistent practice
+        and steady instruction are the foundation of musical progress. Our
+        instructors dedicate time each week to prepare individualized lesson
+        plans and ensure every student thrives. To maintain a smooth, reliable
+        schedule for both students and faculty, we ask all families to review
+        and follow the studio guidelines below.
+      </p>
+
+      <section class="mt-12" aria-labelledby="monthly-tuition-heading">
+        <h2
+          id="monthly-tuition-heading"
+          class="text-xl font-bold tracking-tight text-slate-900 md:text-2xl"
+        >
+          Monthly Tuition & Schedule
+        </h2>
+        <p class="mt-4 text-base leading-relaxed text-slate-600 md:text-lg">
+          Tuition is processed automatically on the 1st of each month using the
+          payment method on file. This flat rate reserves your dedicated weekly
+          recurring lesson slot. Depending on the calendar and holiday closures,
+          months typically contain four lessons, though some may have three or
+          five. The monthly tuition remains constant regardless of the number of
+          calendar weeks.
+        </p>
+      </section>
+
+      <section class="mt-10" aria-labelledby="attendance-heading">
+        <h2
+          id="attendance-heading"
+          class="text-xl font-bold tracking-tight text-slate-900 md:text-2xl"
+        >
+          Attendance & Last-Minute Adjustments
+        </h2>
+        <p class="mt-4 text-base leading-relaxed text-slate-600 md:text-lg">
+          Because your instructor’s time is reserved exclusively for you,
+          tuition is not refunded or prorated for missed lessons. If travel,
+          mild illness, or scheduling conflicts arise on short notice, your
+          session can be conducted live via Zoom during your regularly scheduled
+          time slot to avoid missing instruction.
+        </p>
+      </section>
+
+      <section class="mt-10" aria-labelledby="makeup-heading">
+        <h2
+          id="makeup-heading"
+          class="text-xl font-bold tracking-tight text-slate-900 md:text-2xl"
+        >
+          Make-Up Lessons (In-Person or Zoom)
+        </h2>
+        <p class="mt-4 text-base leading-relaxed text-slate-600 md:text-lg">
+          If a lesson must be rescheduled entirely, students are eligible for a
+          make-up session provided at least 24 hours’ advance notice is given.
+          Make-up lessons may be completed either in-person or via Zoom,
+          depending on your preference and instructor availability. All make-ups
+          must be scheduled during the instructor’s standard teaching hours
+          within an existing open time slot. Make-up sessions do not carry cash
+          value and cannot be deducted from future tuition.
+        </p>
+      </section>
+
+      <section class="mt-10" aria-labelledby="substitutions-heading">
+        <h2
+          id="substitutions-heading"
+          class="text-xl font-bold tracking-tight text-slate-900 md:text-2xl"
+        >
+          Instructor Substitutions
+        </h2>
+        <p class="mt-4 text-base leading-relaxed text-slate-600 md:text-lg">
+          If your primary instructor is unavailable due to an illness or
+          professional engagement, the studio will provide a qualified
+          substitute teacher or arrange a rescheduled session. Learning from
+          another professional perspective provides valuable musical insight,
+          and regular billing policies continue to apply.
+        </p>
+      </section>
+
+      <section class="mt-10" aria-labelledby="withdrawals-heading">
+        <h2
+          id="withdrawals-heading"
+          class="text-xl font-bold tracking-tight text-slate-900 md:text-2xl"
+        >
+          Mid-Month Withdrawals
+        </h2>
+        <p class="mt-4 text-base leading-relaxed text-slate-600 md:text-lg">
+          Tuition is non-refundable once the monthly billing cycle has been
+          processed on the 1st.
+        </p>
+      </section>
+
+      <section class="mt-10" aria-labelledby="cancellation-heading">
+        <h2
+          id="cancellation-heading"
+          class="text-xl font-bold tracking-tight text-slate-900 md:text-2xl"
+        >
+          Cancellation or Pause Notice
+        </h2>
+        <p class="mt-4 text-base leading-relaxed text-slate-600 md:text-lg">
+          To pause or discontinue lessons, written notice must be submitted to
+          the studio by the 15th of the month prior to your next billing date.
+          Requests received after the 15th will take effect for the following
+          billing cycle.
+        </p>
+      </section>
+    </article>
+  </main>
+
+  <script is:inline>
+    (() => {
+      const menuBtn = document.getElementById("mobile-menu-btn");
+      const menu = document.getElementById("mobile-menu");
+      const iconOpen = document.getElementById("mobile-menu-icon-open");
+      const iconClose = document.getElementById("mobile-menu-icon-close");
+      if (!menuBtn || !menu || !iconOpen || !iconClose) return;
+
+      const setMenuOpen = (isOpen) => {
+        menu.classList.toggle("hidden", !isOpen);
+        iconOpen.classList.toggle("hidden", isOpen);
+        iconClose.classList.toggle("hidden", !isOpen);
+        menuBtn.setAttribute("aria-expanded", String(isOpen));
+        menuBtn.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+      };
+
+      menuBtn.addEventListener("click", () => {
+        setMenuOpen(menu.classList.contains("hidden"));
+      });
+
+      menu.querySelectorAll(".mobile-nav-link").forEach((link) => {
+        link.addEventListener("click", () => setMenuOpen(false));
+      });
+    })();
+  </script>
+</Layout>
